@@ -39,8 +39,8 @@
 #https://medium.com/clarusway/how-to-use-git-github-without-asking-for-authentication-always-passwordless-usage-of-private-git-8c32489bc2e9
 #https://blog.nillsf.com/index.php/2021/05/27/github-sso-using-password-protected-ssh-keys
 
-project=$(basename `pwd`)
-githubdir="arcolinux"
+project="arcolinux-root"
+githubdir="DrKittens"
 echo "-----------------------------------------------------------------------------"
 echo "this is project https://github.com/$githubdir/$project"
 echo "-----------------------------------------------------------------------------"
@@ -75,7 +75,7 @@ case $CHOICE in
 			git config --global user.name "DrKittens"
 			git config --global user.email "DrKittens@users.noreply.github.com"
 			sudo git config --system core.editor vim
-			git config --global credential.helper cache
+      git config --global credential.helper 'cache --timeout=32000'
       echo
       echo "Everything set"
       ;;
